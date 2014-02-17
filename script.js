@@ -29,6 +29,7 @@ function finishAjax_tier_three(id, response) {
 }
 
 
+  
 
 $(function() {
 		
@@ -54,10 +55,12 @@ $(function() {
 		('#from').datetimepicker('show');
 	});
 	
-	/*$(function() {*/
-    $( "#radioset" ).buttonset();
-  /*});*/
-  
+
   $('#datetimepicker').datetimepicker();
 	
 	});
+	
+	
+$(function() {
+    $( "#canSelect" ).buttonset();
+  });
