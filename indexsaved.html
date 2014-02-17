@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html lang="en">
+ 
+ <head>
+	<meta charset="utf-8">
+	<title>VisApp</title>
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  
+	
+	
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="script.js"></script>
+	<script>
+	
+	</script>
+ </head>
+ 
+ <body>
+<?php
+include ('aitDataBaseConfig.php');
+include ('func.php');
+?>
+ <h1>VisApp: Database Query Test<h1>
+ <!--<h3>First Query: Mission/Satellite<h3>-->
+ 
+<p>
+<form action="" method="post">
+ 
+  <select name="select_1" id="select_1">
+    
+      <option value="" selected="selected" disabled="disabled">Select</option>
+      
+      <?php 
+	  $link = connect($GLOBALS['aitDataBaseServerAdmin']['host'], $GLOBALS['aitDataBaseServerAdmin']['user'], $GLOBALS['aitDataBaseServerAdmin']['pass'], $GLOBALS['databases']['satelliteIndex']);
+		select_0($link); 
+	  ?>
+    
+   </select> 
+    
+    <span id="wait_1" style="display: none;">
+    <img alt="Please Wait" src="ajax-loader.gif"/>
+    </span>
+    <span id="result_1" style="display: none;"></span>
+    <span id="wait_2" style="display: none;">
+    <img alt="Please Wait" src="ajax-loader.gif"/>
+    </span>
+    <span id="result_2" style="display: none;"></span> 
+ 
+
+
+ 
+  
+</form>
+</p> 
+
+<!-- Datepicker -->
+
+<input type="text" name="date" id="date" />
+<!--	
+<h3>Second Query:<h3>
+	<select id="query2" name="query2" >
+		<option value="">Select<option>
+	</select>
+	-->
+ </body>
+</html>

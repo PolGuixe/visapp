@@ -1,0 +1,124 @@
+html {
+	min-height: 100%;
+	padding: 0;
+	margin: 0;
+	position:relative;
+}
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0px;
+}
+#bodyWrapper {
+	witdh: 100%;
+	min-width: 1000px;
+	
+
+	background-color:cyan;
+	z-index:0;
+}
+#header {
+	height: 60px;
+	color: white;
+	position: relative;
+	top: 0em;
+	margin: 0px 0px 0px 0px;
+	overflow: hidden;
+	/*/* BACKGROUND GRADIENT   
+background: #d14df2; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #d14df2 0%, #c85ec7 54%, #9a48a5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #d14df2), color-stop(54%, #c85ec7), color-stop(100%, #9a48a5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg, #d14df2 0%, #c85ec7 54%, #9a48a5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg, #d14df2 0%, #c85ec7 54%, #9a48a5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg, #d14df2 0%, #c85ec7 54%, #9a48a5 100%); /* IE10+ */
+	background: linear-gradient(135deg, #d14df2 0%, #c85ec7 54%, #9a48a5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d14df2', endColorstr='#9a48a5', GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	z-index: 200;
+}
+#title {
+	font-family: orbitron, Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	position: relative;
+	top: 0.5em;
+	left: 0.9em;
+	float: left;
+}
+#subtitle {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	position: relative;
+	top: 2em;
+	left: 0.5em;
+	float: left;
+}
+#contentWrapper{
+ margin-bottom:30px; <!--important!!! Keep footer at the bottom!-->
+}
+
+.container{
+	width: 95%;
+	margin-right: auto;
+	margin-left:auto;
+	margin-top:1%;
+	margin-bottom:1%;
+	position: relative;
+	background-color: red;
+	padding: 1%;
+	border-radius: 0.5em;
+}
+
+#chart {
+	width:100%;
+	height: 500px;
+	background-color: blue;
+	
+}
+.dataSelect {
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	/*top:300px;*/
+	width: 100%;
+	height: 1.5em;
+	background-color: green;
+	z-index:10;
+	/*padding-top:0.25em;*/
+}
+
+.selectContainer{
+	float:left;
+	margin-right:0.5em;
+}
+
+.datepickerContainer, .radioContainer, .submitContainer {
+	float:right;
+	margin-right:1.5em;
+}
+
+
+
+/*#radio{
+border-radius:20em;
+height:2px;
+}*/
+
+
+#footer{
+	background-color: orange;
+	height: 30px;
+	clear:both;
+ 	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	z-index:10;	
+}
+
+#submit{
+	color:white;
+	border-radius:	15px;
+	background-color:#2DFA56;
+	border:none;
+	font-size:1em;
+}

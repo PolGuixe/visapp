@@ -1,0 +1,6 @@
+SELECT tlmid, tlm_rawval, tlm_engval, tlm_rxdate, tlm_rxtime from tbl_tlm_log_pribus_n12 where tlmid=569 and tlm_rxtime < '10:15:00'
+
+
+
+
+select * from 'ev1' where tmstamp > '2013-03-01' and tmstamp < '2013-04-01' order by tmstamp
