@@ -62,5 +62,5 @@ $(function() {
 	
 	
 $(function() {
-    $( "#canSelect" ).buttonset();
+    $( ".radioButton" ).buttonset();
   });

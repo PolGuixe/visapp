@@ -98,10 +98,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d14df2', end
 
 
 
-/*#radio{
-border-radius:20em;
-height:2px;
-}*/
+.radioButton{
+font-size:.6em !important;
+
+}
 
 
 #footer{
