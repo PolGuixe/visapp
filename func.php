@@ -120,8 +120,8 @@ function select_1($selection){
 		$('#select_2').change(function(){
 		$('#wait_2').show();
 		$('#result_2').hide();
-		$.get(\"func.php\", {
-		func: \"select_2\",
+		$.get('func.php', {
+		func: 'select_2',
 		selection: $('#select_2').val(),
 		database: $('#select_1').val()
       }, function(response){
@@ -153,7 +153,7 @@ function select_2($selection, $database){
 	$sql = "select name, tlmid from ttctlm where nodeid=" . $selection . " order by name"; //
 	$result = $link->query($sql);
 	//echo $GLOBALS['aitDataBaseServerAdmin']['host'];
-	echo '<select name="drop_3" id="drop_3">
+	echo '<select name="select_3" id="select_3">
 		  <option value="" disable="disabled" selected="selected">Choose</option>';
 		
 		 
@@ -183,7 +183,49 @@ $('#wait_2').hide();
 	
 
 }
+if($_GET['func'] == "submit" && isset($_GET['func'])) { //isset($_GET['func']) && !empty($_POST['test'])
+	$queryInfo = $_GET['queryInfoArray']; //maybe $_REQUEST
+	
+	//echo (string)$queryInfo["mission"];
+	submit($queryInfo);
+}
 
+//How to call this function
+
+function submit($queryInfo){
+	$mission = $queryInfo["mission"];
+	$nodeId = $queryInfo["nodeId"];
+	$tlmId = $queryInfo["tlmId"];
+	$canBus = $queryInfo["canBus"];
+	$dateTimeFrom = $queryInfo["dateTimeFrom"];
+	$dateTimeTo = $queryInfo["dateTimeTo"];
+	$data = array();
+	
+	$link = connect($GLOBALS['aitDataBaseServerAdmin']['host'], $GLOBALS['aitDataBaseServerAdmin']['user'], $GLOBALS['aitDataBaseServerAdmin']['pass'], $GLOBALS['databases']['satelliteIndex']);
+	$sql = "Select LogDB from satellites where TableName = '".$mission."'";
+	$result = $link->query($sql);
+	  while($row = mysqli_fetch_assoc( $result )) 
+			{
+			  $database=$row['LogDB'];
+			}
+	//echo $database;
+	
+	
+	$link = connect("10.1.206.11","readonly","",$database);
+	//$sql = "select engval, datetime from tbl_tlm_log_N".$nodeId." where tlmid = ".$tlmId." AND bus = '".$canBus."' datetime BETWEEN '".$dateTimeFrom."' AND '".$dateTimeTo."'" ;
+	$sql = "select engval, datetime from tbl_tlm_log_N3 where tlmid = 775 AND bus = '0' AND datetime BETWEEN '2013-12-03 12:00:00' AND '2013-12-08 12:00:00'  order by datetime";
+	$result  = $link->query($sql);
+	
+	while($row = mysqli_fetch_assoc( $result )) 
+			{
+			  $data[$row['datetime']]=$row['engval'];
+			}
+	
+	//maybe I need to store this into an array
+	echo json_encode($data);
+
+	
+}
 
 function select(){
 	echo "Hello";
